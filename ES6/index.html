@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+
+// CRAETE THE CLASS & OBJECT IN ES6 
+
+
+class Person{
+
+
+// private variable here 
+
+  #test;
+
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+        this.#test=100;
+        console.log('object is init-->');
+        console.log('Nameof the Person-->' +this.name);
+        console.log('Age of the Person-->' +this.age);
+    }
+
+// private method here 
+
+ #stuffPrivateMethod(){
+
+  console.log('call the private method here -->');
+    return this.#test;
+ }
+
+
+// public  method here 
+
+ 
+getConcatMethod(){
+
+  console.log('Call all the nmethod here -->');
+    return this.conCat();
+}
+
+conCat(){
+
+    console.log('concat methos is concating the name & age of the person-->');
+    return this.name + ""  +this.age;
+}
+
+
+preMethod(){
+
+   console.log('call the private using preveledged one -->');
+
+   return this.#stuffPrivateMethod();
+}
+
+
+}
+
+
+let p =new Person('IBM' ,45);
+
+console.log('calling the person class public method-->' +p.getConcatMethod());
+console.log('Calling the private method here -->' +p.preMethod());
+
+</script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
